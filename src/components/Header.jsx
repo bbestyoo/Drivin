@@ -3,6 +3,8 @@ import React from 'react'
 
 export const Header = () => {
   return (
-    <div>Header</div>
+    <>
+    <h2>this is Header</h2>
+    </>
   )
 }
