@@ -7,11 +7,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/bundle';
+import { Aboutus } from './Aboutus';
 
 
 export const Home = () => {
   return (
-    <div className='relative'>
+    <div >
+      <div className='relative'>
+
+      
     
     <Swiper 
       // install Swiper modules
@@ -38,7 +42,7 @@ export const Home = () => {
       
   </Swiper>
 
-  <div className='flex mx-20 absolute bottom-1 translate-y-[50%] z-10'>
+  <div className='flex mx-20 absolute bottom-1 translate-y-[50%] z-10 mb-20'>
     <div className='flex gap-3 p-5 shadow-lg  '>
       <span>Logo</span>
       <div>
@@ -61,6 +65,9 @@ export const Home = () => {
       </div>
     </div>
   </div>
+  </div>
+
+  <Aboutus/>
   </div>
 
 
