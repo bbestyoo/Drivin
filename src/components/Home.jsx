@@ -1,75 +1,84 @@
-
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-import 'swiper/css'
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/bundle';
-import { Aboutus } from './Aboutus';
-
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/bundle";
+import { Aboutus } from "./Aboutus";
 
 export const Home = () => {
   return (
-    <div >
-      <div className='relative'>
+    <div>
+    <div className="relative">
+      <Swiper className="mb-40"
+        // install Swiper modules
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        loop
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+        slideToClickedSlide={true}
+      >
+        <SwiperSlide>
+          <div className=" relative  before:absolute  before:block  before:h-full before:w-full  before:bg-black before:inset-0 before:opacity-70">
+            <img className=" " src="carousel-1.jpg" alt="oops" />
+          </div>
+        </SwiperSlide>
 
-      
-    
-    <Swiper 
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={50} 
-      slidesPerView={1}
-      navigation
-      loop
-      autoplay={{ delay: 5000, disableOnInteraction: false }} 
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-      slideToClickedSlide={true} 
-    >
-      <SwiperSlide>
-      <img className="image-with-shadow" src="carousel-1.jpg" alt="oops" />
-      </SwiperSlide>
+        <SwiperSlide>
+          <div className=" relative  before:absolute  before:block  before:h-full before:w-full  before:bg-black before:inset-0 before:opacity-70">
+            <img src="carousel-2.jpg" alt="oops" />x
+          </div>
+        </SwiperSlide>
+      </Swiper>
 
-      <SwiperSlide>
-      <img className="image-with-shadow"  src="carousel-2.jpg" alt="oops" />
-      </SwiperSlide>
-      
-      
-  </Swiper>
-
-  <div className='flex mx-20 absolute bottom-1 translate-y-[50%] z-10 mb-20'>
-    <div className='flex gap-3 p-5 shadow-lg  '>
-      <span>Logo</span>
-      <div>
-        <span>highlights</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, doloribus!</p>
+       <div className="flex mx-20 absolute bottom-1 translate-y-[50%] z-10">
+        <div className="flex gap-3 p-5 shadow-xl bg-white  ">
+          <span>Logo</span>
+          <div>
+            <span>highlights</span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+              doloribus!
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 p-5 shadow-xl bg-white ">
+          <span>Logo</span>
+          <div>
+            <span>highlights</span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+              doloribus!
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 p-5 shadow-xl bg-white  ">
+          <span>Logo</span>
+          <div>
+            <span>highlights</span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+              doloribus!
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <div className='flex gap-3 p-5 shadow-lg  '>
-      <span>Logo</span>
-      <div>
-        <span>highlights</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, doloribus!</p>
-      </div>
+      <Aboutus/>
     </div>
-    <div className='flex gap-3 p-5 shadow-lg  '>
-      <span>Logo</span>
-      <div>
-        <span>highlights</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, doloribus!</p>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <Aboutus/>
-  </div>
-
-
-  )
-}
+  );
+};

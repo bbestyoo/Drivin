@@ -22,3 +22,9 @@
     display: none;
 }
 
+/* //about us pic big ass border */
+
+#borderpic{
+  border: 13px;
+  border-color: red;
+}
