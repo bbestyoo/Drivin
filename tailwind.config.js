@@ -6,8 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      listStyleType: {
-        
+      backgroundImage:{
+
+        bgimage:  "url('carousel-1.jpg')",
       }
     },
   },

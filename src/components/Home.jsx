@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/bundle";
 import { Aboutus } from "./Aboutus";
+import { Appointments, Courses } from "./Courses";
 
 export const Home = () => {
   return (
@@ -79,6 +80,17 @@ export const Home = () => {
       </div>
     </div>
       <Aboutus/>
+      <div className="relative h-ful">
+      <div className=" relative bg-bgimage before:absolute  before:block  before:h-full before:w-full  before:bg-white before:inset-0 before:opacity-90">
+            
+          </div>
+          <div className="absolute top-24">
+
+        <Courses/>
+        
+        <Appointments/>
+          </div>
+      </div>
     </div>
   );
 };
