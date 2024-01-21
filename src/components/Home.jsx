@@ -12,11 +12,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/bundle";
+import { Aboutus } from "./Aboutus";
+import { Appointments, Courses } from "./Courses";
 
 export const Home = () => {
   return (
+    <div>
     <div className="relative">
-      <Swiper
+      <Swiper className="mb-40"
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
@@ -31,20 +34,20 @@ export const Home = () => {
         slideToClickedSlide={true}
       >
         <SwiperSlide>
-          <div className=" relative before:content-[''] before:absolute  before:block  before:h-full before:w-full  before:bg-black before:inset-0 before:opacity-70">
+          <div className=" relative  before:absolute  before:block  before:h-full before:w-full  before:bg-black before:inset-0 before:opacity-70">
             <img className=" " src="carousel-1.jpg" alt="oops" />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className=" relative before:content-[''] before:absolute  before:block  before:h-full before:w-full  before:bg-black before:inset-0 before:opacity-70">
-            <img src="carousel-2.jpg" alt="oops" />
+          <div className=" relative  before:absolute  before:block  before:h-full before:w-full  before:bg-black before:inset-0 before:opacity-70">
+            <img src="carousel-2.jpg" alt="oops" />x
           </div>
         </SwiperSlide>
       </Swiper>
 
-      <div className="flex mx-20 absolute bottom-1 translate-y-[50%] z-10">
-        <div className="flex gap-3 p-5 shadow-lg  ">
+       <div className="flex mx-20 absolute bottom-1 translate-y-[50%] z-10">
+        <div className="flex gap-3 p-5 shadow-xl bg-white  ">
           <span>Logo</span>
           <div>
             <span>highlights</span>
@@ -54,7 +57,7 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-3 p-5 shadow-lg  ">
+        <div className="flex gap-3 p-5 shadow-xl bg-white ">
           <span>Logo</span>
           <div>
             <span>highlights</span>
@@ -64,7 +67,7 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-3 p-5 shadow-lg  ">
+        <div className="flex gap-3 p-5 shadow-xl bg-white  ">
           <span>Logo</span>
           <div>
             <span>highlights</span>
@@ -74,6 +77,19 @@ export const Home = () => {
             </p>
           </div>
         </div>
+      </div>
+    </div>
+      <Aboutus/>
+      <div className="relative h-ful">
+      <div className=" relative bg-bgimage before:absolute  before:block  before:h-full before:w-full  before:bg-white before:inset-0 before:opacity-90">
+            
+          </div>
+          <div className="absolute top-24">
+
+        <Courses/>
+        
+        <Appointments/>
+          </div>
       </div>
     </div>
   );

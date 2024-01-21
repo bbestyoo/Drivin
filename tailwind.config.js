@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+
+        bgimage:  "url('carousel-1.jpg')",
+      }
+    },
   },
   plugins: [],
 }
