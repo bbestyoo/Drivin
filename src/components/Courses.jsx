@@ -5,7 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 export const Courses = () => {
   return (
-    <div className='mx-20 '>
+    <div className='mx-20 mt-24 '>
         <div className="text-center">
 
         <p className='text-yellow-400 font-bold'>TRANDING COURSES</p>
@@ -15,8 +15,8 @@ export const Courses = () => {
             <div className='bg-white'>
             <div className='flex flex-col items-center gap-4 px-5'>
                 <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1>Automatic Car Lessons</h1>
-                <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                <h1 className='font-semibold text-xl'>Automatic Car Lessons</h1>
+                <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>
 
@@ -33,8 +33,8 @@ export const Courses = () => {
             <div  className='bg-white'>
             <div className='flex flex-col items-center gap-4 px-5'>
                 <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1>Automatic Car Lessons</h1>
-                <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                <h1 className='font-semibold text-xl'>Automatic Car Lessons</h1>
+                <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>
 
@@ -51,8 +51,8 @@ export const Courses = () => {
             <div  className='bg-white'>
             <div className='flex flex-col items-center gap-4 px-5'>
                 <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1>Automatic Car Lessons</h1>
-                <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                <h1 className='font-semibold text-xl'>Automatic Car Lessons</h1>
+                <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>
 
@@ -74,7 +74,7 @@ export const Courses = () => {
 
 export const Appointments = () => {
     return (
-        <div className='mx-auto my-32 bg-yellow-400 p-10 w-[60%]'>
+        <div className='mx-auto mt-32 bg-yellow-400 p-10 w-[60%]'>
             <form action="">
 
             <h1 className='font-bold text-4xl text-center'>Make Appointment</h1>

@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       colors:{
-        dark: "#0C2B4B"
+        dark: "#0C2B4B",
+        footer: "#0C2B4B",
+        last: "#092139"
 
       },
       backgroundImage:{

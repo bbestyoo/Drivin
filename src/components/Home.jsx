@@ -15,8 +15,21 @@ import "swiper/css/bundle";
 import { Aboutus, Features } from "./Aboutus";
 import { Appointments, Courses } from "./Courses";
 import Agents from "./Agents";
+import Footer from "./Footer";
+import { Parallax } from 'react-parallax';
+
 
 export const Home = () => {
+
+  const handleStyle = {
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed', // Set to 'fixed' for scrolling effect
+    opacity: 0.3, // Adjust the opacity value as needed (0 to 1)
+  }
+
+
   return (
     <div>
       <div className="relative">
@@ -82,18 +95,17 @@ export const Home = () => {
         </div>
       </div>
       <Aboutus />
-      <div className="relative h-ful">
-        <div className=" relative bg-bgimage before:absolute  before:block  before:h-full before:w-full  before:bg-white before:inset-0 before:opacity-90"></div>
-        <div className="absolute top-24">
-          <Courses />
-
-          <Appointments />
+      <Parallax blur={5} bgImage="carousel-1.jpg" bgImageStyle={handleStyle} bgImageAlt="the cat" strength={900}>
+    
+        <Courses/>
+        <Appointments/>
+        
+    </Parallax>
+      <Features/>
           <div className=" mt-52 mx-8 mb-28">
             <Agents />
           </div>
-        </div>
-      </div>
-      <Features/>
+          <Footer/>
     </div>
   );
 };
