@@ -9,9 +9,6 @@ function App() {
   return (
     <>
       <HeaderTop />
-      <div className=" mt-52 mx-8 mb-28">
-        <Agents />
-      </div>
     </>
   );
 }
