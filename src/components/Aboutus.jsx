@@ -1,6 +1,19 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
+
+
+
+export function About (){
+
+  return (
+    <>
+    hi
+    <Aboutus/>
+    </>
+  )
+}
+
 export const Aboutus = () => {
   return (
     <div className="px-32 flex items-end gap-10 mb-24">

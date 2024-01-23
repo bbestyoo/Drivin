@@ -18,16 +18,15 @@ import Agents from "./Agents";
 import Footer from "./Footer";
 import { Parallax } from 'react-parallax';
 
+export function Home (){
 
-export const Home = () => {
-
-  const handleStyle = {
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed', // Set to 'fixed' for scrolling effect
-    opacity: 0.3, // Adjust the opacity value as needed (0 to 1)
-  }
+    const handleStyle = {
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed', 
+      opacity: 0.3,
+    }
 
 
   return (

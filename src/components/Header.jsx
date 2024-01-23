@@ -1,40 +1,56 @@
 
 import React, { useState } from 'react'
 // import Headroom from 'react-headroom'
-import { IoLocationOutline } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
 import { GoClock } from "react-icons/go";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Home } from './Home';
 import { FaArrowRight } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
+import { FaCar } from "react-icons/fa";
 
 export function HeaderTop(){
   return (
     <>
-    <header className='flex justify-between px-6 bg-dark text-white py-2'>
-            <ul className='flex gap-4'>
+    <header className='flex justify-between px-11 bg-dark text-white'>
+            <ul className='flex gap-8 py-2'>
                 <li className='flex items-center'>
-                <IoLocationOutline className='text-yellow-500'/>
+                <FaLocationDot className='text-yellow-400'/>
                 123 Street, New York, USA
 
                 </li>
-                <li className='flex items-center'>
-                <GoClock />
+                <li className='flex items-center gap-2'>
+                <GoClock className='text-yellow-400'/>
                 Mon - Fri : 09.00 AM - 09.00 PM
                 </li>
             </ul>
-            <ul className='flex gap-4'>
-                <li className='flex items-center'>
-                    Phone 
+            <div className='flex gap-6'>
+
+            <ul className='flex gap-4 py-2'>
+                <li className='flex gap-2 items-center'>
+                    <FaPhone className='text-yellow-400' />
+                    <p>
+
                     +012 345 6789
+                    </p>
 
                 </li>
-                <li className='flex items-center'>
-                    F T in O
-                </li>
             </ul>
+            <ul className='flex gap-3'>
+              <li className='pt-3'><FaFacebookF className='text-yellow-400'/></li>
+              <li className='pt-3 pl-3 border-l border-yellow-400'><FaTwitter className='text-yellow-400'/></li>
+                <li className='pt-3 px-3 border-x border-yellow-400'>
+                <FaLinkedinIn className='text-yellow-400' />
+                </li>
+                <li className='pt-3'><FaInstagram className='text-yellow-400'/></li>
+            </ul>
+            </div>
     </header>
-    <Nav/>
         
     </>
   )
@@ -54,26 +70,28 @@ export function Nav(){
   return (
     <>
     {/* <Headroom> */}
-    <header className='flex justify-between pl-6'>
-      <ul className='border-r pr-14 py-4 '>
-        <li className='py-3'>
-          Logo
+    <header className='flex justify-between pl-11'>
+      <ul className='border-r pr-14 py-3 '>
+        <li className='py-3 flex items-center gap-3'>
+        <FaCar size={40} className='text-yellow-500'/>
+         <p className='font-bold text-3xl'>
           Drivin
+          </p> 
         </li>
       </ul>
-      <ul className='flex gap-9 text-xl font-normal'>
+      <ul className='flex gap-9 text-lg font-normal'>
         <li className='py-7'>
-          <NavLink to="/">
+          <Link to="/">
             Home
-          </NavLink>
+          </Link>
         </li>
         <li className='py-7'>
-          <NavLink to="/">
+          <NavLink to="/about">
             About
           </NavLink>
         </li>
         <li className='py-7'>
-          <NavLink to="/">
+          <NavLink to="/courses">
             Courses
           </NavLink>
         </li>
@@ -97,12 +115,12 @@ export function Nav(){
         }
         </li>
         <li className='py-7'>
-          <NavLink to="/">
+          <NavLink to="/contacts">
           Contacts
           </NavLink>
         </li>
    
-        <li className='text-white py-7 px-7 bg-yellow-400 text-xl font-normal '>
+        <li className='text-white py-6   px-11 bg-yellow-400 text-xl font-normal '>
           <NavLink className="flex items-center gap-5" to="/get-started">
             Get Started <FaArrowRight />
           </NavLink>
