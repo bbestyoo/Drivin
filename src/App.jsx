@@ -1,14 +1,30 @@
-import { useState } from "react";
 import "./App.css";
-import { HeaderTop } from "./components/Header";
+import { HeaderTop, Nav } from "./components/Header";
 import Agents from "./components/Agents";
+import { About } from "./components/Aboutus";
+import { Courses } from "./components/Courses";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./components/Home";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
-      <HeaderTop />
+    <HeaderTop/>
+    <Nav/>
+     
+      <Routes>
+
+
+        <Route to="/" element={<Home/>} />
+        <Route to="/about" element={<About/>} />
+        <Route to="/courses" element={<Courses/>} />
+      </Routes>
+      {/* // </Routes> */}
+
+
+
+
     </>
   );
 }

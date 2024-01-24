@@ -12,11 +12,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/bundle";
-import { Aboutus } from "./Aboutus";
+import { Aboutus, Features } from "./Aboutus";
 import { Appointments, Courses } from "./Courses";
 import Agents from "./Agents";
+import Footer from "./Footer";
+import { Parallax } from "react-parallax";
 
-export const Home = () => {
+export function Home() {
   return (
     <div>
       <div className="relative">
@@ -82,17 +84,27 @@ export const Home = () => {
         </div>
       </div>
       <Aboutus />
-      <div className="relative h-ful">
-        <div className=" relative bg-bgimage before:absolute  before:block  before:h-full before:w-full  before:bg-white before:inset-0 before:opacity-90"></div>
-        <div className="absolute top-24">
-          <Courses />
-
-          <Appointments />
-          <div className=" mt-52 mx-8 mb-28">
-            <Agents />
-          </div>
-        </div>
+      <Parallax
+        blur={5}
+        bgImage="carousel-1.jpg"
+        bgImageStyle={{
+          width: "100%",
+          height: "100%",
+          opacity: "0.3",
+          objectFit: "cover",
+        }}
+        bgImageAlt="the cat"
+        bgImageSize="cover"
+        strength={900}
+      >
+        <Courses />
+        <Appointments />
+      </Parallax>
+      <Features />
+      <div className=" mt-52 mx-8 mb-28">
+        <Agents />
       </div>
+      <Footer />
     </div>
   );
-};
+}
