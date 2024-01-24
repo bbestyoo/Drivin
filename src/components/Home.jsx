@@ -16,19 +16,9 @@ import { Aboutus, Features } from "./Aboutus";
 import { Appointments, Courses } from "./Courses";
 import Agents from "./Agents";
 import Footer from "./Footer";
-import { Parallax } from 'react-parallax';
+import { Parallax } from "react-parallax";
 
-export function Home (){
-
-    const handleStyle = {
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed', 
-      opacity: 0.3,
-    }
-
-
+export function Home() {
   return (
     <div>
       <div className="relative">
@@ -94,17 +84,27 @@ export function Home (){
         </div>
       </div>
       <Aboutus />
-      <Parallax blur={5} bgImage="carousel-1.jpg" bgImageStyle={handleStyle} bgImageAlt="the cat" strength={900}>
-    
-        <Courses/>
-        <Appointments/>
-        
-    </Parallax>
-      <Features/>
-          <div className=" mt-52 mx-8 mb-28">
-            <Agents />
-          </div>
-          <Footer/>
+      <Parallax
+        blur={5}
+        bgImage="carousel-1.jpg"
+        bgImageStyle={{
+          width: "100%",
+          height: "100%",
+          opacity: "0.3",
+          objectFit: "cover",
+        }}
+        bgImageAlt="the cat"
+        bgImageSize="cover"
+        strength={900}
+      >
+        <Courses />
+        <Appointments />
+      </Parallax>
+      <Features />
+      <div className=" mt-52 mx-8 mb-28">
+        <Agents />
+      </div>
+      <Footer />
     </div>
   );
-};
+}
