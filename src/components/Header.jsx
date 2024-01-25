@@ -128,7 +128,6 @@ export function Nav(){
         </ul>
     </header>
     {/* </Headroom> */}
-    <Home/>
     
     </>
   )
