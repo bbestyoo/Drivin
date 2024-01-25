@@ -20,7 +20,7 @@ import { Parallax } from "react-parallax";
 
 export function Home() {
   return (
-    <div>{console.log("asdasd")}
+    <div>
       <div className="relative">
         <Swiper
           className="mb-40"

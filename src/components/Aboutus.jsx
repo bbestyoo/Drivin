@@ -1,5 +1,8 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
+import { Banner } from "./Header";
+import Agents from "./Agents";
+import Footer from "./Footer";
 
 
 
@@ -8,8 +11,13 @@ export function About (){
 
   return (
     <>
-    hi
+    <Banner topic={"About Us"}/>
     <Aboutus/>
+    <div className="my-32">
+
+    <Agents/>
+    </div>
+    <Footer/>
     </>
   )
 }
