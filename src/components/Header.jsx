@@ -106,12 +106,23 @@ export function Nav(){
         {
           Hovered && (
             <div className={`bg-white w-48 absolute -bottom-[10] z-10 py-2 transition-all duration-400 ease-in-out ${Hovered ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-              <p className='px-3 hover:bg-gray-200 py-2'>Features</p>
-              <p className='px-3 hover:bg-gray-200 py-2'>Appointment</p>
-              <p className='px-3 hover:bg-gray-200 py-2'>Our teams</p>
-              <p className='px-3 hover:bg-gray-200 py-2'>Testimonials</p>
-              <p className='px-3 hover:bg-gray-200 py-2'>404 page</p>
+              <Link to="/features" >
+              <p className='px-3 hover:bg-gray-200 hover:cursor-pointer  py-2'>Features</p>
+              </Link>
+              <Link to="/appointment" >
+              <p className='px-3 hover:bg-gray-200 hover:cursor-pointer  py-2'>Appointment</p>
+              </Link>
+              <Link to="/ourteam" >
+              <p className='px-3 hover:bg-gray-200 hover:cursor-pointer  py-2'>Our teams</p>
+              </Link>
+              <Link to="/features" >
+              <p className='px-3 hover:bg-gray-200 hover:cursor-pointer  py-2'>Testimonials</p>
+              </Link>
+              <Link to="/features" >
+              <p className='px-3 hover:bg-gray-200 hover:cursor-pointer  py-2'>404 page</p>
+              </Link>
 
+         
             </div>
           )
         }
