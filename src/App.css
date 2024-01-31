@@ -61,3 +61,42 @@
   left: 0%;
   z-index: 1;
 }
+
+
+
+.inputBorder::after{
+  content: "";
+  height: 0%;
+  width: 100%;
+  background-color: #f3bd00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  
+
+  
+  
+
+}
+
+.inputBorder{
+  transform: scale(1);
+  transition: all .1s ease-in;
+
+
+}
+.inputBorder:focus-within {
+  transform: scale(1.02);
+
+}
+
+
+
+
+.inputBorder:focus-within::after {
+  opacity: 1;
+  height: 100%;
+
+}
