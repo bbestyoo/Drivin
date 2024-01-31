@@ -8,6 +8,20 @@ import "../App.css";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { Banner } from "./Header";
+import Footer from "./Footer";
+
+export function OurTeam() {
+  return (
+    <>
+      <Banner topic="Our Team" />
+      <div className="mb-40">
+        <Agents />
+      </div>
+      <Footer />
+    </>
+  );
+}
 
 function Agents() {
   return (
@@ -53,7 +67,7 @@ export const Card = (props) => {
         <div
           className={`  absolute  top-4 opacity-0 transition-all duration-500 ease-in-out   ${
             isActive ? " opacity-100 top-40 " : ""
-          }   left-16 translate-x-7 items-center  z-40  flex  justify-center gap-4`}
+          }   left-10 translate-x-7 items-center  z-40  flex  justify-center gap-4`}
         >
           <span className=" border-2 border-[#f3bd00]  group  hover:bg-[#f3bd00]  p-2">
             <FaFacebookF className=" text-xl text-[#f3bd00] group-hover:text-white " />

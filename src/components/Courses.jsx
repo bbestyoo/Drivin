@@ -2,6 +2,24 @@
 import React from 'react'
 import { BiBarChartAlt } from "react-icons/bi";
 import { FaCalendarAlt } from "react-icons/fa";
+import { Banner } from './Header';
+import Agents from './Agents';
+import Footer from './Footer';
+
+
+export const CoursesPage = () =>{
+
+    return (
+        <>
+        <Banner topic={"Courses"}/>
+        <Courses/>
+        <div className="mt-32">
+    
+        <Footer/>
+        </div>
+        </>
+      )
+}
 
 export const Courses = () => {
   return (
