@@ -44,7 +44,7 @@ export default function Footer() {
     <>
       <div>
         <div className=" bg-footer">
-          <div className="flex justify-between p-5 bg-footer pt-20 pl-10 pr-10 text-white">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 bg-footer pt-20 pl-10 pr-10 text-white">
             <div className="  p-5 rounded-3xl px-10">
               <p className="text-2xl font-bold ">Get In Touch</p>
               <p className="flex items-center gap-3 my-4 "><FaCar size={30}/><span className="text-3xl font-bold text-yellow-400">Drivin</span></p>
@@ -116,14 +116,14 @@ export default function Footer() {
 
             <div className=" p-5 rounded-3xl px-10 text-left">
               <p className="text-2xl font-bold mb-4">News Letter</p>
-              <div className="flex items-center">
+              <div className="flex items-center sm:w-full">
                 <input
-                  className="p-3 w-36"
+                  className="p-3 w-36 sm:w-full"
                   type="text"
                   placeholder="Your Email Address"
                 />
                 <button className="bg-yellow-400 text-white px-5 p-3 font-semibold">
-                  Sign Up
+                  SignUp
                 </button>
               </div>
               <div className="my-4">
@@ -138,18 +138,18 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="bg-last flex justify-between px-16 py-7">
-          <div className="flex gap-1">
+        <div className="bg-last grid grid-cols-2 px-16 py-7">
+          <div className="">
             <span className="text-white">© </span>
             <span className="text-yellow-400">Your Site Name,</span>
             <span className="text-white">All Right Reserved.</span>
           </div>
-          <div>
-            <span className="flex justify-end gap-1">
+          <div className="">
+            <span className="grid grid-cols-2">
               <p className="text-white">Designed By </p>
               <p className="text-yellow-400"> HTML Codex</p>
             </span>
-            <span className="flex gap-1 ">
+            <span className="grid grid-cols-2">
               <p className="text-white">Distributed By: </p>
               <p className="text-yellow-400"> ThemeWagon</p>
             </span>

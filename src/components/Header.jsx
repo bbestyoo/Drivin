@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Headroom from 'react-headroom'
 import { FaLocationDot } from "react-icons/fa6";
 import { GoClock } from "react-icons/go";
@@ -14,19 +14,21 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { FaCar } from "react-icons/fa";
 import "../App.css";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoCloseSharp } from "react-icons/io5";
 
 
 export function HeaderTop(){
   return (
     <>
-    <header className='flex justify-between px-11 bg-dark text-white'>
+    <header className='hidden lg:flex justify-between px-11 bg-dark text-white '>
             <ul className='flex gap-8 py-2'>
-                <li className='flex items-center'>
+                <li className='flex items-center text-sm'>
                 <FaLocationDot className='text-yellow-400'/>
                 123 Street, New York, USA
 
                 </li>
-                <li className='flex items-center gap-2'>
+                <li className='flex items-center gap-2 text-sm'>
                 <GoClock className='text-yellow-400'/>
                 Mon - Fri : 09.00 AM - 09.00 PM
                 </li>
@@ -36,7 +38,7 @@ export function HeaderTop(){
             <ul className='flex gap-4 py-2'>
                 <li className='flex gap-2 items-center'>
                     <FaPhone className='text-yellow-400' />
-                    <p>
+                    <p className=' text-sm'>
 
                     +012 345 6789
                     </p>
@@ -61,44 +63,79 @@ export function Nav(){
 
 
     const [Hovered, setHovered] = useState(false)
+    const [menu, setMenu] = useState(false)
+    const [showNav, setShowNav] = useState(false);
     function hoverPages() {
       setHovered((prev)=> !prev)
     }
+    function handleMenu() {
+      setMenu((prev)=> !prev)
+      console.log("menu",menu)
+    }
     
 
+    useEffect(() => {
+      // Show/hide the scroll-to-top button based on scroll position
+      const handleScroll = () => {
+        if (window.scrollY > 300) {
+          setShowNav(true)
+        } else {
+          setShowNav(false)
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+  
+      // Clean up the event listener on component unmount
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
 
 
 
+
+    // ${showNav && 'sticky z-50 top-0 '}
   return (
     <>
     {/* <Headroom> */}
-    <header className='flex justify-between pl-11'>
-      <ul className='border-r pr-14 py-3 '>
-        <li className='py-3 flex items-center gap-3'>
-        <FaCar size={40} className='text-yellow-500'/>
+    <header className={`transition-all ease-in duration-300 bg-white flex flex-col lg:flex lg:flex-row lg:justify-between pl-11 w-full `}>
+      <div className=' sm:border-b md:border-b sm:flex md:flex lg:flex justify-between w-full'>
+
+      <ul className='border-r pr-14 lg:py-2 sm:py-4 md:py-4  '>
+        <li className='lg:py-3 sm:py-4 md:py-4  flex items-center gap-3'>
+        <FaCar size={30} className='text-yellow-500'/>
          <p className='font-bold text-3xl'>
           Drivin
           </p> 
         </li>
       </ul>
-      <ul className='flex gap-9 text-lg font-normal'>
-        <li className='py-7'>
+      <ul className='py-7 lg:hidden pr-10'>
+        <li className='lg:hidden border p-2' onClick={handleMenu}>{menu ? <IoCloseSharp size={30}/> : <RxHamburgerMenu size={30}/> }</li>
+      </ul>
+
+      </div>
+
+
+      <ul className={`hidden md:${menu === false ? "" : "flex flex-col gap-8 font-semibold font-sans py-4 text-xl" } w-fit lg:flex lg:flex-row lg:gap-8 text-sm font-semibold `}>
+
+        <li className='lg:py-7 uppercase'>
           <NavLink to="/">
             Home
           </NavLink>
         </li>
-        <li className='py-7'>
+        <li className='lg:py-7 uppercase'>
           <NavLink to="/about">
             About
           </NavLink>
         </li>
-        <li className='py-7'>
+        <li className='lg:py-7 uppercase'>
           <NavLink to="/courses">
             Courses
           </NavLink>
         </li>
-        <li onMouseEnter={hoverPages} onMouseLeave={hoverPages} className=' relative'>
-          <NavLink  className="flex gap-2 items-end py-7" to="/">
+        <li onMouseEnter={hoverPages} onMouseLeave={hoverPages} className=' relative uppercase'>
+          <NavLink  className="flex gap-2 items-end lg:py-7" to="/">
             Pages
             <IoIosArrowDown />
 
@@ -127,18 +164,22 @@ export function Nav(){
           )
         }
         </li>
-        <li className='py-7'>
+        <li className='lg:py-7 uppercase'>
           <NavLink to="/contacts">
-          Contacts
+          Contact
           </NavLink>
         </li>
    
-        <li className='text-white py-6   px-11 bg-yellow-400 text-xl font-normal '>
+        <li className={`hidden lg:flex text-white lg:py-5  px-11 bg-yellow-400 text-lg font-normal `}>
           <NavLink className="flex items-center gap-5" to="/get-started">
-            Get Started <FaArrowRight />
+            <p>GetStarted</p>
+           
+            <FaArrowRight />
           </NavLink>
         </li>
         </ul>
+
+
     </header>
     {/* </Headroom> */}
     <Outlet/>
