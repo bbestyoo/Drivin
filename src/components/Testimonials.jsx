@@ -3,12 +3,12 @@ import pp2 from "../../public/pp2.jpg";
 import pp3 from "../../public/pp3.jpg";
 import pp4 from "../../public/pp4.jpg";
 
-// import Swiper JS
-// import Swiper from "swiper";
-// import Swiper styles
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { FaQuoteLeft } from "react-icons/fa";
+import "../App.css";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const mock_data = [
   {
@@ -49,45 +49,64 @@ const mock_data = [
 ];
 
 function Testimonials() {
+  let settings = {
+    dots: true,
+    isFinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
+      <div className=" my-20">
+        <Slider {...settings}>
+          {mock_data.map((slide, index) => {
+            return (
+              <div key={index}>
+                <Card user={slide} />
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
+      {/* <swiper-container slides-per-view="1" loop="true" Pagination="true">
         {mock_data.map((slide, index) => {
           return (
-            <SwiperSlide key={index}>
+            <swiper-slide key={index}>
               <Card user={slide} />
-            </SwiperSlide>
+            </swiper-slide>
           );
         })}
-      </Swiper>
-      {/* <div>
-        <section
-          id="for the carousel box"
-          className=" flex flex-col items-center "
-        >
-          <div>
-            <img
-              className=" w-36 h-36 object-cover object-top rounded-full"
-              alt="pp"
-              src={pp1}
-            />
-          </div>
-          <div>
-            <p className=" text-2xl text-gray-400">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
-              quod consequuntur iusto maiores molestiae.
-            </p>
-          </div>
-          <hr />
-          <p>Bibesh Basner</p>
-          <p>Engineer</p>
-        </section>
-      </div> */}
+      </swiper-container> */}
     </>
   );
 }
@@ -99,21 +118,26 @@ export const Card = ({ user }) => {
     <>
       <section
         id="for the carousel box "
-        className=" flex flex-col items-center "
+        className="  flex flex-col items-center "
       >
-        <div>
+        <div className=" relative">
           <img
             className=" w-36 h-36 object-cover object-top rounded-full"
             alt="pp"
             src={user.image}
           />
+          <div className=" absolute -bottom-8 left-12 -translate-x-0 bg-white p-3 rounded-full">
+            <FaQuoteLeft className=" text-3xl" />
+          </div>
         </div>
-        <div>
-          <p className=" text-2xl text-gray-400">{user.character}</p>
+        <div className="  box-border mt-10 w-1/2">
+          <p className=" text-center text-2xl text-gray-400">
+            {user.character}
+          </p>
         </div>
-        <hr />
-        <p>{user.name}</p>
-        <p>{user.profession}</p>
+        <hr className=" my-2 h-[2px]  w-[200px] bg-slate-200" />
+        <p className=" text-black text-xl font-semibold">{user.name}</p>
+        <p className=" text-slate-400">{user.profession}</p>
       </section>
     </>
   );

@@ -11,24 +11,16 @@ import { FaInstagram } from "react-icons/fa";
 import { Banner } from "./Header";
 import Footer from "./Footer";
 
-
-
-export function OurTeam (){
-
-
-
+export function OurTeam() {
   return (
     <>
-    <Banner topic="Our Team"/>
-    <div className="mb-40">
-
-    <Agents/>
-    </div>
-    <Footer/>
-
-
+      <Banner topic="Our Team" />
+      <div className="mb-40">
+        <Agents />
+      </div>
+      <Footer />
     </>
-  )
+  );
 }
 
 function Agents() {
