@@ -17,6 +17,7 @@ import { Appointments, Courses } from "./Courses";
 import Agents from "./Agents";
 import Footer from "./Footer";
 import { Parallax } from "react-parallax";
+import Testimonials from "./Testimonials";
 
 export function Home() {
   return (
@@ -103,6 +104,9 @@ export function Home() {
       <Features />
       <div className=" mt-52 mx-8 mb-28">
         <Agents />
+      </div>
+      <div>
+        <Testimonials />
       </div>
       <Footer />
     </div>
