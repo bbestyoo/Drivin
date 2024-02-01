@@ -42,9 +42,9 @@ export default function Footer() {
 
   return (
     <>
-      <div>
+      <div className="">
         <div className=" bg-footer">
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 bg-footer pt-20 pl-10 pr-10 text-white">
+          <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 bg-footer pt-20 pl-10 pr-10 text-white">
             <div className="  p-5 rounded-3xl px-10">
               <p className="text-2xl font-bold ">Get In Touch</p>
               <p className="flex items-center gap-3 my-4 "><FaCar size={30}/><span className="text-3xl font-bold text-yellow-400">Drivin</span></p>
@@ -138,20 +138,20 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="bg-last grid grid-cols-2 px-16 py-7">
+        <div className="bg-last grid md:grid-cols-1 text-center lg:text-left lg:grid-cols-2  px-16 py-7">
           <div className="">
             <span className="text-white">© </span>
             <span className="text-yellow-400">Your Site Name,</span>
             <span className="text-white">All Right Reserved.</span>
           </div>
-          <div className="">
-            <span className="grid grid-cols-2">
-              <p className="text-white">Designed By </p>
-              <p className="text-yellow-400"> HTML Codex</p>
+          <div className="text-center lg:text-right">
+            <span className="block">
+              <p className="text-white inline">Designed By </p>
+              <p className="text-yellow-400 inline"> HTML Codex</p>
             </span>
-            <span className="grid grid-cols-2">
-              <p className="text-white">Distributed By: </p>
-              <p className="text-yellow-400"> ThemeWagon</p>
+            <span className="">
+              <p className="text-white inline">Distributed By: </p>
+              <p className="text-yellow-400 inline"> ThemeWagon</p>
             </span>
           </div>
           {isVisible && (
