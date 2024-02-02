@@ -44,8 +44,8 @@ export default function Footer() {
     <>
       <div className="">
         <div className=" bg-footer">
-          <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 bg-footer pt-20 pl-10 pr-10 text-white">
-            <div className="  p-5 rounded-3xl px-10">
+          <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 sm:p-5 bg-footer pt-20 sm:pl-10 sm:pr-10 pl-3 text-white">
+            <div className="  p-5 rounded-3xl sm:px-10">
               <p className="text-2xl font-bold ">Get In Touch</p>
               <p className="flex items-center gap-3 my-4 ">
                 <FaCar size={30} />
@@ -67,7 +67,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className=" p-5 rounded-3xl px-10 text-white">
+            <div className=" p-5 rounded-3xl sm:px-10 text-white">
               <p className="text-2xl font-bold mb-4">Quick Links</p>
               <ul className="text-left flex flex-col gap-1">
                 <Link>
@@ -97,7 +97,7 @@ export default function Footer() {
                 </Link>
               </ul>
             </div>
-            <div className=" p-5 rounded-3xl px-10 text-white">
+            <div className=" p-5 rounded-3xl sm:px-10 text-white">
               <p className="text-2xl font-bold mb-4">Popular Links</p>
               <ul className="text-left flex flex-col gap-1">
                 <Link>
@@ -128,11 +128,11 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className=" p-5 rounded-3xl px-10 text-left">
+            <div className=" p-5 rounded-3xl sm:px-10 text-left">
               <p className="text-2xl font-bold mb-4">News Letter</p>
-              <div className="flex items-center sm:w-full">
+              <div className="flex items-center w-fit">
                 <input
-                  className="p-3 w-36 sm:w-full"
+                  className="p-3 w-full sm:w-full"
                   type="text"
                   placeholder="Your Email Address"
                 />
@@ -160,7 +160,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="bg-last grid md:grid-cols-1 text-center lg:text-left lg:grid-cols-2  px-16 py-7">
+        <div className="bg-last grid md:grid-cols-1 text-center lg:text-left lg:grid-cols-2  sm:px-16 py-7">
           <div className="">
             <span className="text-white">© </span>
             <span className="text-yellow-400">Your Site Name,</span>

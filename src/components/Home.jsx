@@ -45,10 +45,10 @@ export function Slides ({user}){
         <h1>{user.text0}</h1>
         <h1>{user.text1}</h1>
         </div>
-        <div className='flex gap-5 justify-center'>
+        <div className='flex flex-col sm:flex-row gap-5 justify-center'>
 
-        <button className='bg-yellow-400 px-12 py-4 text-white'>Learn More</button>
-        <button className='bg-white px-12 py-4 text-black'>Our Courses</button>
+        <button className='bg-yellow-400 sm:px-5 py-1 md:px-12 md:py-4 text-white'>Learn More</button>
+        <button className='bg-white sm:px-5 py-1 md:px-12 md:py-4 text-black'>Our Courses</button>
         </div>
       </div>
 
@@ -70,6 +70,9 @@ export function Home() {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1024,
@@ -79,21 +82,21 @@ export function Home() {
           infinite: true,
         },
       },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
+      // {
+      //   breakpoint: 600,
+      //   settings: {
+      //     slidesToShow: 1,
+      //     slidesToScroll: 2,
+      //     initialSlide: 2,
+      //   },
+      // },
+      // {
+      //   breakpoint: 300,
+      //   settings: {
+      //     slidesToShow: 1,
+      //     slidesToScroll: 1,
+      //   },
+      // },
     ],
   };
 
@@ -106,9 +109,9 @@ export function Home() {
   };
 
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <div className="relative mb-40">
-        <div className="">
+        <div className="relative">
           <Slider className='sliderHome' {...settings} ref={sliderRef}>
             {mock_data.map((slide, index) => (
               <>
@@ -121,11 +124,11 @@ export function Home() {
           </Slider>
         
           <div className="carousel-buttons">
-            <div onClick={handlePrevSlide} className='px-4 group absolute top-0 left-20  h-[100vh]  flex items-center'>
+            <div onClick={handlePrevSlide} className='px-4 group absolute top-0 left-20  h-[100%]  flex items-center'>
 
             <button className='text-5xl  opacity-50 group-hover:opacity-100 bg-yellow-400 p-1 text-white px-3' >{'<'}</button>
             </div>
-            <div onClick={handleNextSlide} className='px-4 group absolute top-0 right-20  h-[100vh]  flex items-center'>
+            <div onClick={handleNextSlide} className='px-4 group absolute top-0 right-20  h-[100%]  flex items-center'>
 
             <button className='text-5xl  opacity-50 group-hover:opacity-100 bg-yellow-400 p-1 text-white px-3' >{'>'}</button>
             </div>
@@ -133,7 +136,7 @@ export function Home() {
           </div>
   
       </div>
-        <div className="flex mx-20 flex-col my-20 lg:flex-row lg:absolute lg:-bottom-20 lg:translate-y-[50%] lg:z-10">
+        <div className="flex mx-5 sm:mx-20 flex-col my-20 lg:flex-row lg:absolute lg:-bottom-20 lg:translate-y-[50%] lg:z-10">
           <div className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white  ">
             <span className='bg-yellow-400 p-2  text-white'><FaCar size={25}/></span>
             <div>

@@ -4,9 +4,6 @@
 
 
 
-/* //about us pic big ass border */
-
-#borderpic {
-  border: 13px;
-  border-color: red;
+.active {
+  color: rgb(213, 213, 4);
 }

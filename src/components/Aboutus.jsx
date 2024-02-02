@@ -24,16 +24,16 @@ export function About (){
 
 export const Aboutus = () => {
   return (
-    <div className="px-32 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:self-end lg:gap-10 mb-24">
-      <div className="relative self-end w-full">
-        <img className="lg:h-full w-full" src="about-1.jpg" alt="" />
+    <div className="px-10 sm:px-20 md:px-32 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10 mb-24">
+      <div className="aboutUsDiv relative pt-10 pl-10 ">
+        <img className="h-full left-5 w-full" src="about-1.jpg" alt="" />
         <img
-          className=" border-white border-solid  border-8 absolute -top-10 -left-20 h-[25vh]"
+          className="aboutUsPic "
           src="about-2.jpg"
           alt="oops"
         />
       </div>
-      <div className="mt-10 lg:mt-0 h-full  lg:flex lg:flex-col lg:gap-4">
+      <div className="flex flex-col lg:gap-4">
         <h3 className="text-yellow-400 uppercase text-l font-bold">About us</h3>
         <h1 className="font-bold text-4xl">
           We Help Students To Pass Test & Get A License On The First Try
@@ -66,7 +66,7 @@ export const Aboutus = () => {
             Best Trainers
           </li>
         </ul>
-        <div className="flex gap-28">
+        <div className="flex flex-col gap-7 sm:flex-row sm:gap-28">
           <button className="text-white bg-yellow-400 px-9 py-4 hover:bg-yellow-300">
             Read more
           </button>
@@ -92,7 +92,7 @@ export const Features = () => {
           diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
           lorem sit clita duo justo magna dolore erat amet
         </p>
-        <ul className="grid grid-cols-2 gap-3">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <li className="mb-5">
             <span className="flex items-center gap-3 mb-5">
 
@@ -141,8 +141,8 @@ export const Features = () => {
         </ul>
       
       </div>
-      <div className="relative">
-        <img className="h-[75vh] w-[95vw]" src="about-1.jpg" alt="" />
+      <div className="relative self-end">
+        <img className="h-[78vh] w-[95vw]" src="about-1.jpg" alt="" />
         <img
           className=" border-white border-solid  border-8 absolute -top-10 right-0 h-[25vh]"
           src="about-2.jpg"

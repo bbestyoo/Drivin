@@ -46,12 +46,12 @@ export function HeaderTop(){
                 </li>
             </ul>
             <ul className='flex gap-3'>
-              <li className='pt-3'><FaFacebookF className='text-yellow-400'/></li>
-              <li className='pt-3 pl-3 border-l border-yellow-400'><FaTwitter className='text-yellow-400'/></li>
-                <li className='pt-3 px-3 border-x border-yellow-400'>
-                <FaLinkedinIn className='text-yellow-400' />
+              <li className='group pt-3'><FaFacebookF className='text-yellow-400 group-hover:text-yellow-600'/></li>
+              <li className='group pt-3 pl-3 border-l border-yellow-400'><FaTwitter className='text-yellow-400 group-hover:text-yellow-600'/></li>
+                <li className='group pt-3 px-3 border-x border-yellow-400 transition-all ease-linear'>
+                <FaLinkedinIn className='text-yellow-400 group-hover:text-yellow-600' />
                 </li>
-                <li className='pt-3'><FaInstagram className='text-yellow-400'/></li>
+                <li className='group pt-3'><FaInstagram className='text-yellow-400 group-hover:text-yellow-600'/></li>
             </ul>
             </div>
     </header>
@@ -100,7 +100,7 @@ export function Nav(){
     <>
     {/* <Headroom> */}
     <header className={`transition-all ease-in duration-300 bg-white flex flex-col lg:flex lg:flex-row lg:justify-between pl-11 w-full `}>
-      <div className=' sm:border-b md:border-b sm:flex md:flex lg:flex justify-between w-full'>
+      <div className='header sm:border-b md:border-b sm:flex md:flex lg:flex justify-between w-full'>
 
       <ul className='border-r pr-14 lg:py-2 sm:py-4 md:py-4  '>
         <li className='lg:py-3 sm:py-4 md:py-4  flex items-center gap-3'>
@@ -117,10 +117,10 @@ export function Nav(){
       </div>
 
 
-      <ul className={`hidden md:${menu === false ? "" : "flex flex-col gap-8 font-semibold font-sans py-4 text-xl" } w-fit lg:flex lg:flex-row lg:gap-8 text-sm font-semibold `}>
+      <ul className={` ${menu === false ? "hidden" : "flex flex-col gap-8 font-semibold font-sans py-4 text-xl" } w-fit lg:flex lg:flex-row lg:gap-8 text-sm font-semibold `}>
 
         <li className='lg:py-7 uppercase'>
-          <NavLink to="/">
+          <NavLink  to="/">
             Home
           </NavLink>
         </li>
@@ -135,7 +135,7 @@ export function Nav(){
           </NavLink>
         </li>
         <li onMouseEnter={hoverPages} onMouseLeave={hoverPages} className=' relative uppercase'>
-          <NavLink  className="flex gap-2 items-end lg:py-7" to="/">
+          <NavLink  className="flex gap-2 items-end lg:py-7" to="/pages">
             Pages
             <IoIosArrowDown />
 

@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { BiBarChartAlt } from "react-icons/bi";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Banner } from './Header';
@@ -22,8 +22,10 @@ export const CoursesPage = () =>{
 }
 
 export const Courses = () => {
+    const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className='mx-20 mt-24 '>
+    <div className=' mx-5 sm:mx-20 mt-24 '>
         <div className="text-center">
 
         <p className='text-yellow-400 font-bold'>TRANDING COURSES</p>
@@ -46,7 +48,24 @@ export const Courses = () => {
                     </span>
                 </p>
             </div>
-                <img src="courses-1.jpg" alt="oops" />
+            {/* <div className='relative before:absolute before:block before:bg-black before:h- before:w-full before:opacity-50 z-10 hover:before:h-full transition-hover 0.3s ease-in-out '>
+
+                <img className='' src="courses-1.jpg" alt="oops" />
+            </div> */}
+            <div className='relative coursesDiv '>
+                <div 
+                 onMouseEnter={() => setIsActive(true)}
+                 onMouseLeave={() => setIsActive(false)}
+                 className='coursesImg  '>
+
+
+                <img className='' src="courses-1.jpg" alt="oops" />
+                </div>
+                <div className={`transition-all duration-500 ease-in-out top-4 opacity-0   ${
+            isActive ? " opacity-100 top-40 z-50 " : "" } text-yellow-400 border border-yellow-400 px-2 py-1 absolute top-[50%] -translate-x-[50%] left-[50%] -translate-y-[50%]`}>
+                    Read More
+                </div>
+            </div>
             </div>
             <div  className='bg-white'>
             <div className='flex flex-col text-center items-center gap-4 px-5'>
@@ -92,15 +111,15 @@ export const Courses = () => {
 
 export const Appointments = () => {
     return (
-        <div className='mx-auto mt-32 bg-yellow-400 p-10 w-[60%]'>
+        <div className='mx-auto mt-32 bg-yellow-400 p-10 w-[80%] sm:w-[60%]'>
             <form action="">
 
             <h1 className='font-bold text-4xl text-center'>Make Appointment</h1>
-            <div className='flex gap-5 mt-7'>
+            <div className='flex flex-col sm:flex sm:flex-row gap-5 mt-7'>
                 <input className='px-5 py-4 w-full' placeholder='Your name' type="text" />
                 <input className='px-5 py-4 w-full' placeholder='Your email' type="text" />
             </div>
-            <div className='flex  gap-5 mt-7'>
+            <div className='flex flex-col sm:flex sm:flex-row  gap-5 mt-7'>
                 <input className='px-5 py-4 w-full' placeholder='Courses type' type="text" />
                 <input className='px-5 py-4 w-full' placeholder='Car type' type="text" />
             </div>

@@ -61,11 +61,11 @@ export const Card = (props) => {
             id=""
             alt="pp"
             src={props.img}
-            className="h-[60vh] md:h-[42vh] w-[70vw]  object-top object-cover"
+            className="h-[35vh] sm:h-[60vh] md:h-[42vh] w-[70vw]  object-top object-cover"
           />
         </div>
         <div
-          className={`  absolute  top-4 opacity-0 transition-all duration-500 ease-in-out   ${
+          className={`  absolute opacity-0 top-0  transition-all duration-500 ease-in-out   ${
             isActive ? " opacity-100 top-40 " : ""
           }   left-10 translate-x-7 items-center  z-40  flex  justify-center gap-4`}
         >
