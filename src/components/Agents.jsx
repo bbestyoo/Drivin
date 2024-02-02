@@ -1,8 +1,8 @@
 import { useState } from "react";
-import pp1 from "../../public/pp1.jpg";
-import pp2 from "../../public/pp2.jpg";
-import pp3 from "../../public/pp3.jpg";
-import pp4 from "../../public/pp4.jpg";
+import pp2 from "/pp2.jpg";
+import pp1 from "/pp1.jpg";
+import pp3 from "/pp3.jpg";
+import pp4 from "/pp4.jpg";
 import "../App.css";
 
 import { FaFacebookF } from "react-icons/fa";
@@ -32,7 +32,7 @@ function Agents() {
           We Have Great <br /> Experience Of Driving
         </h1>
       </section>
-      <section className=" container  px-8 flex gap-4 justify-center">
+      <section className="   px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <Card img={pp1} />
         <Card img={pp2} />
         <Card img={pp3} />
@@ -61,7 +61,7 @@ export const Card = (props) => {
             id=""
             alt="pp"
             src={props.img}
-            className=" h-[42vh] w-[70vw]  object-top object-cover"
+            className="h-[60vh] md:h-[42vh] w-[70vw]  object-top object-cover"
           />
         </div>
         <div

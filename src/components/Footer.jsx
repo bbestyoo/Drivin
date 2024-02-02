@@ -42,9 +42,9 @@ export default function Footer() {
 
   return (
     <>
-      <div>
+      <div className="">
         <div className=" bg-footer">
-          <div className="flex justify-between p-5 bg-footer pt-20 pl-10 pr-10 text-white">
+          <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 bg-footer pt-20 pl-10 pr-10 text-white">
             <div className="  p-5 rounded-3xl px-10">
               <p className="text-2xl font-bold ">Get In Touch</p>
               <p className="flex items-center gap-3 my-4 ">
@@ -130,14 +130,14 @@ export default function Footer() {
 
             <div className=" p-5 rounded-3xl px-10 text-left">
               <p className="text-2xl font-bold mb-4">News Letter</p>
-              <div className="flex items-center">
+              <div className="flex items-center sm:w-full">
                 <input
-                  className="p-3 w-36"
+                  className="p-3 w-36 sm:w-full"
                   type="text"
                   placeholder="Your Email Address"
                 />
                 <button className="bg-yellow-400 text-white px-5 p-3 font-semibold">
-                  Sign Up
+                  SignUp
                 </button>
               </div>
               <div className="my-4">
@@ -160,20 +160,20 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="bg-last  grid    w-full  grid-cols-2 px-16 py-7">
-          <div className=" gap-1">
+        <div className="bg-last grid md:grid-cols-1 text-center lg:text-left lg:grid-cols-2  px-16 py-7">
+          <div className="">
             <span className="text-white">© </span>
             <span className="text-yellow-400">Your Site Name,</span>
             <span className="text-white">All Right Reserved.</span>
           </div>
-          <div className="  text-right">
-            <span className=" gap-1  block">
-              <p className="text-white inline-block">Designed By </p>
-              <p className="text-yellow-400 inline-block"> HTML Codex</p>
+          <div className="text-center lg:text-right">
+            <span className="block">
+              <p className="text-white inline">Designed By </p>
+              <p className="text-yellow-400 inline"> HTML Codex</p>
             </span>
-            <span className="gap-1 ">
-              <p className="text-white inline-block">Distributed By: </p>
-              <p className="text-yellow-400 inline-block"> ThemeWagon</p>
+            <span className="">
+              <p className="text-white inline">Distributed By: </p>
+              <p className="text-yellow-400 inline"> ThemeWagon</p>
             </span>
           </div>
           {isVisible && (

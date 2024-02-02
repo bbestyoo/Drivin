@@ -1,7 +1,7 @@
-import pp1 from "../../public/pp1.jpg";
-import pp2 from "../../public/pp2.jpg";
-import pp3 from "../../public/pp3.jpg";
-import pp4 from "../../public/pp4.jpg";
+import pp1 from "/pp1.jpg";
+import pp2 from "/pp2.jpg";
+import pp3 from "/pp3.jpg";
+import pp4 from "/pp4.jpg";
 
 import { FaQuoteLeft } from "react-icons/fa";
 import "../App.css";
@@ -55,8 +55,8 @@ function Testimonials() {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
     cssEase: "linear",
     responsive: [
       {
@@ -84,12 +84,13 @@ function Testimonials() {
         },
       },
     ],
-  };
+  }; 
+  
   return (
     <>
       <div className=" my-20">
-        <Slider {...settings}>
-          {mock_data.map((slide, index) => {
+        <Slider className="slider" {...settings}>
+          {mock_data.map((slide, index) => {   
             return (
               <div key={index}>
                 <Card user={slide} />
@@ -116,10 +117,16 @@ export default Testimonials;
 export const Card = ({ user }) => {
   return (
     <>
+    <div className="">
+
       <section
         id="for the carousel box "
         className="  flex flex-col items-center "
       >
+        <div className="text-center mb-16">
+          <p className="text-yellow-400">TESTIMONIAL</p>
+          <h1 className="font-bold text-4xl text-black">What Our Clients Say! </h1>
+        </div>
         <div className=" relative">
           <img
             className=" w-36 h-36 object-cover object-top rounded-full"
@@ -139,6 +146,8 @@ export const Card = ({ user }) => {
         <p className=" text-black text-xl font-semibold">{user.name}</p>
         <p className=" text-slate-400">{user.profession}</p>
       </section>
+    </div>
+
     </>
   );
 };

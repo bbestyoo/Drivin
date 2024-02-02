@@ -1,3 +1,20 @@
+*{
+  font-family: "Work Sans",sans-serif;
+  
+}
+
+body {
+  width: full;
+}
+
+
+.mySlider {
+  font-size: 65px;
+  font-weight: 800;
+  font-family: sans-serif;
+  line-height: 85px;
+}
+
 .myCard {
   overflow: hidden;
   padding: 20px;
@@ -84,7 +101,7 @@
   opacity: 1;
   height: 100%;
 }
-.slick-dots {
+.slider .slick-dots {
   bottom: -4rem !important;
   display: flex !important;
   gap: 0.5rem;
@@ -93,7 +110,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-.slick-dots li button::before {
+.slider .slick-dots li button::before {
   /* background-color: #f3bd00; */
   border: 2px solid #f3bd00 !important;
 
@@ -106,7 +123,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-.slick-dots li.slick-active {
+.slider .slick-dots li.slick-active {
   background-color: #f3bd00;
   /* border: none; */
   transition: all 0.5s ease-in-out;
@@ -114,3 +131,9 @@
   /* height: 40px;
   width: 40px; */
 }
+
+
+.sliderHome .slick-dots {
+  display: hidden;
+}
+ 
