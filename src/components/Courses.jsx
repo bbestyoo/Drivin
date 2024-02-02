@@ -29,11 +29,11 @@ export const Courses = () => {
         <p className='text-yellow-400 font-bold'>TRANDING COURSES</p>
         <h1 className='font-bold text-4xl'>Our Courses Upskill You <br /> With Driving Training</h1>
         </div>
-        <div className='flex gap-6 mt-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-3 gap-6 mt-10'>
             <div className='bg-white'>
-            <div className='flex flex-col items-center gap-4 px-5'>
+            <div className='flex flex-col items-center text-center gap-4 px-5'>
                 <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1 className='font-semibold text-xl'>Automatic Car Lessons</h1>
+                <h1 className='font-semibold text-xl text-center'>Automatic Car Lessons</h1>
                 <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>
@@ -49,9 +49,9 @@ export const Courses = () => {
                 <img src="courses-1.jpg" alt="oops" />
             </div>
             <div  className='bg-white'>
-            <div className='flex flex-col items-center gap-4 px-5'>
+            <div className='flex flex-col text-center items-center gap-4 px-5'>
                 <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1 className='font-semibold text-xl'>Automatic Car Lessons</h1>
+                <h1 className='font-semibold text-xl text-center'>Automatic Car Lessons</h1>
                 <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>
@@ -67,9 +67,9 @@ export const Courses = () => {
                 <img src="courses-1.jpg" alt="oops" />
             </div>
             <div  className='bg-white'>
-            <div className='flex flex-col items-center gap-4 px-5'>
+            <div className='flex flex-col items-center gap-4 text-center px-5'>
                 <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1 className='font-semibold text-xl'>Automatic Car Lessons</h1>
+                <h1 className='font-semibold text-xl text-center'>Automatic Car Lessons</h1>
                 <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>

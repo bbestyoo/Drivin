@@ -24,16 +24,16 @@ export function About (){
 
 export const Aboutus = () => {
   return (
-    <div className="px-32 flex items-end gap-10 mb-24">
-      <div className="relative">
-        <img className="h-[70vh] w-[80vw]" src="about-1.jpg" alt="" />
+    <div className="px-32 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:self-end lg:gap-10 mb-24">
+      <div className="relative self-end w-full">
+        <img className="lg:h-full w-full" src="about-1.jpg" alt="" />
         <img
           className=" border-white border-solid  border-8 absolute -top-10 -left-20 h-[25vh]"
           src="about-2.jpg"
           alt="oops"
         />
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="mt-10 lg:mt-0 h-full  lg:flex lg:flex-col lg:gap-4">
         <h3 className="text-yellow-400 uppercase text-l font-bold">About us</h3>
         <h1 className="font-bold text-4xl">
           We Help Students To Pass Test & Get A License On The First Try
@@ -81,7 +81,7 @@ export const Aboutus = () => {
 };
 export const Features = () => {
   return (
-    <div className="px-20 flex items-end gap-10 my-24">
+    <div className="px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 my-24">
       <div className="flex flex-col gap-3">
         <h3 className="text-yellow-400 uppercase text-l font-bold">WHY CHOOSE US!</h3>
         <h1 className="font-bold mb-4 text-4xl">

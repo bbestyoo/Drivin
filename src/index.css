@@ -2,23 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles to hide navigation buttons when not needed */
-.swiper-button-prev,
-.swiper-button-next {
-  color: white;
-  background-color: yellow;
-  height: 30px;
-  font-size: 10px;
-  width: 50px;
-  padding: 40px 30px;
-}
-.swiper-scrollbar {
-  display: none;
-}
 
-.swiper-pagination-bullet {
-  display: none;
-}
 
 /* //about us pic big ass border */
 
