@@ -1,42 +1,246 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+  font-family: "Work Sans",sans-serif;
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  width: full;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* respomnsive navbar */
+
+/* @media screen and (width 350px) {
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+} */
+/* responsive header  */
+@media screen and (min-width: 350px) {
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (width >= 800px) {
+  .mySlider {
+    font-size:65px;
+    font-weight: 800;
+    font-family: sans-serif;
+    line-height: 85px;
   }
+
+}
+@media screen and (700px <= width <= 800px) {
+  .mySlider {
+    font-size:45px;
+    font-weight: 800;
+    font-family: sans-serif;
+    line-height: 60px;
+  } 
+
+}
+@media screen and (550px <= width <= 700px) {
+  .mySlider {
+    font-size:35px;
+    font-weight: 800;
+    font-family: sans-serif;
+    line-height: 50px;
+  } 
+
+}
+@media screen and (400px <= width <= 550px) {
+  .mySlider {
+    font-size:25px;
+    font-weight: 800;
+    font-family: sans-serif;
+    line-height: 40px;
+  } 
+
 }
 
-.card {
-  padding: 2em;
+/* About us pic and div responsive */
+
+.aboutUsDiv {
+  position: relative;
 }
 
-.read-the-docs {
-  color: #888;
+@media screen and (width >= 300px) {
+  .aboutUsPic {
+
+    position: absolute;
+    top: -5px;
+    left: -18px;
+    border: 15px solid white;
+    height: 35%;
+    
+    
+  }
+
 }
+
+
+/* courses design hover */
+
+.coursesDiv {
+  position: relative;
+}
+
+.coursesImg::after {
+  content: "";
+  height: 0%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 40;
+}
+.coursesImg:hover::after {
+  /* top: 0%; */
+  height: 100%;
+  opacity: 0.5;
+  z-index: 40;
+  transition: all 0.5s ease-in-out;
+}
+.coursesImg:not(:hover)::after {
+  height: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+/* agents design.-------------- */
+
+
+.myCard {
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+.myImg::after {
+  content: "";
+  height: 0%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 40;
+}
+.myCard::before {
+  content: "";
+  height: 0%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  position: absolute;
+  opacity: 0;
+  background-color: #f3bd00;
+  z-index: -1;
+}
+.myCard:hover::before {
+  transition: all 0.5s ease-in;
+  opacity: 1;
+  height: 100%;
+}
+
+.myCard:not(:hover)::before {
+  transition: all 0.5s ease-in-out;
+}
+/* here we are grouping so when we hover on mycard then we apply myimg after */
+.myCard:hover .myImg::after {
+  /* top: 0%; */
+  height: 100%;
+  opacity: 0.5;
+  z-index: 40;
+  transition: all 0.5s ease-in-out;
+}
+.myImg:not(:hover)::after {
+  height: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
+
+.myBanner::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+}
+
+.inputBorder::after {
+  content: "";
+  height: 0%;
+  width: 100%;
+  background-color: #f3bd00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.inputBorder {
+  transform: scale(1);
+  transition: all 0.1s ease-in;
+}
+.inputBorder:focus-within {
+  transform: scale(1.02);
+}
+
+.inputBorder:focus-within::after {
+  opacity: 1;
+  height: 100%;
+}
+.slider .slick-dots {
+  bottom: -4rem !important;
+  display: flex !important;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.slider .slick-dots li button::before {
+  /* background-color: #f3bd00; */
+  border: 2px solid #f3bd00 !important;
+
+  height: 20px;
+  width: 20px;
+  transform: scale(1);
+
+  border-radius: 0 !important;
+  content: "" !important;
+  transition: all 0.5s ease-in-out;
+}
+
+.slider .slick-dots li.slick-active {
+  background-color: #f3bd00;
+  /* border: none; */
+  transition: all 0.5s ease-in-out;
+  transform: scale(2);
+  /* height: 40px;
+  width: 40px; */
+}
+
+
+.sliderHome .slick-dots {
+  display: hidden;
+}
+ 
+
+
+
