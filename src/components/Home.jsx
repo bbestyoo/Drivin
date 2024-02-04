@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Aboutus, Features } from "./Aboutus";
 import { Appointments, Courses } from "./Courses";
@@ -15,6 +15,9 @@ import car1 from "/carousel-2.jpg"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 
 const mock_data = [
   {
@@ -60,6 +63,10 @@ export function Slides ({user}){
 }
 
 export function Home() {
+
+  useEffect(()=>{
+    Aos.init();
+  },[])
 
 
   const sliderRef = useRef(null);

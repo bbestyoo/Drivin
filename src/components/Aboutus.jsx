@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import { Banner } from "./Header";
 import Agents from "./Agents";
 import Footer from "./Footer";
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 
 
 
 export function About (){
+ 
 
   return (
     <>
@@ -23,9 +27,14 @@ export function About (){
 }
 
 export const Aboutus = () => {
+  
+  useEffect(()=>{
+    Aos.init({once: false});
+  },[])
+
   return (
-    <div className="px-10 sm:px-20 md:px-32 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10 mb-24">
-      <div className="aboutUsDiv relative pt-10 pl-10 ">
+    <div  className="px-10 sm:px-20 md:px-24 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10 mb-24">
+      <div data-aos = 'slide-up' data-aos-offset="900" data-aos-duration="800" className="aboutUsDiv relative pt-10 pl-10 ">
         <img className="h-full left-5 w-full" src="about-1.jpg" alt="" />
         <img
           className="aboutUsPic "
@@ -33,7 +42,7 @@ export const Aboutus = () => {
           alt="oops"
         />
       </div>
-      <div className="flex flex-col lg:gap-4">
+      <div data-aos = 'slide-up' data-aos-offset="1000" data-aos-duration="1500" className="flex flex-col lg:gap-4">
         <h3 className="text-yellow-400 uppercase text-l font-bold">About us</h3>
         <h1 className="font-bold text-4xl">
           We Help Students To Pass Test & Get A License On The First Try
@@ -80,9 +89,12 @@ export const Aboutus = () => {
   );
 };
 export const Features = () => {
+  useEffect(()=>{
+    Aos.init({once: false});
+  },[])
   return (
-    <div className="px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 my-24">
-      <div className="flex flex-col gap-3">
+    <div  className="px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 my-24">
+      <div data-aos = 'slide-up' data-aos-offset="1000" data-aos-duration="900" className="flex flex-col gap-3">
         <h3 className="text-yellow-400 uppercase text-l font-bold">WHY CHOOSE US!</h3>
         <h1 className="font-bold mb-4 text-4xl">
         Best Driving Training <br /> Agency In Your City        </h1>
@@ -141,7 +153,7 @@ export const Features = () => {
         </ul>
       
       </div>
-      <div className="relative self-end">
+      <div data-aos = 'slide-up' data-aos-duration="1500" data-aos-offset="1100" className="relative self-end">
         <img className="h-[78vh] w-[95vw]" src="about-1.jpg" alt="" />
         <img
           className=" border-white border-solid  border-8 absolute -top-10 right-0 h-[25vh]"

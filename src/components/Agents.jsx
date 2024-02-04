@@ -11,6 +11,13 @@ import { FaInstagram } from "react-icons/fa";
 import { Banner } from "./Header";
 import Footer from "./Footer";
 
+let image = [
+  {imageName:pp1}, 
+  {imageName:pp2}, 
+  {imageName:pp3}, 
+  {imageName:pp4}
+]
+
 export function OurTeam() {
   return (
     <>
@@ -33,10 +40,16 @@ function Agents() {
         </h1>
       </section>
       <section className="   px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <Card img={pp1} />
+        {
+          image.map((imgs, i)=> (
+            
+            <Card data-aos = 'slide-up' data-aos-offset={800} data-aos-duration={i*900 } img={imgs.imageName} key={i} />
+          ))
+          }
+        {/* <Card img={pp1} />
         <Card img={pp2} />
         <Card img={pp3} />
-        <Card img={pp4} />
+        <Card img={pp4} /> */}
       </section>
     </div>
   );
