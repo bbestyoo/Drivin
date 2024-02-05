@@ -29,7 +29,7 @@ export function About (){
 export const Aboutus = () => {
   
   useEffect(()=>{
-    Aos.init({once: false});
+    Aos.init({once: true});
   },[])
 
   return (
