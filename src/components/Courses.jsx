@@ -59,8 +59,8 @@ export const CoursesComponents = () => {
                 <img className='' src="courses-1.jpg" alt="oops" />
                 </div>
                 <div className={`transition-all duration-500 ease-in-out top-4 opacity-0   ${
-            isActive ? " opacity-100 top-40 z-50 " : "" } text-yellow-400 border border-yellow-400 px-2 py-1 absolute top-[50%] -translate-x-[50%] left-[50%] -translate-y-[50%]`}>
-                    Read More
+            isActive ? " opacity-100 top-40 z-40 " : "" } text-yellow-400 border border-yellow-400 px-2 py-1 absolute top-[50%] -translate-x-[50%] left-[50%] -translate-y-[50%]`}>
+                    <button className=''>Read More</button>
                 </div>
             </div>
             </div>

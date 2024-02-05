@@ -42,8 +42,10 @@ function Agents() {
       <section className="   px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {
           image.map((imgs, i)=> (
-            
-            <Card data-aos = 'slide-up' data-aos-offset={800} data-aos-duration={i*900 } img={imgs.imageName} key={i} />
+            <div data-aos = 'slide-up' data-aos-offset={800} data-aos-duration={i*900 }>
+
+            <Card  img={imgs.imageName} key={i} />
+            </div>
           ))
           }
         {/* <Card img={pp1} />
