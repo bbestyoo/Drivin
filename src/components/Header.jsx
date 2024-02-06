@@ -193,7 +193,7 @@ export function Banner(props){
 
   return (
     
-    <div className='relative mb-48'>
+    <div className='relative mb-32'>
 
     <div className='myBanner relative z-1' >
       <img className='h-[45.5vh] w-full object-cover' src="carousel-1.jpg" alt="" />

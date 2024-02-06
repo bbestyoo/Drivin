@@ -34,7 +34,7 @@ export const Aboutus = () => {
 
   return (
     <div  className="px-10 sm:px-20 md:px-24 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10 mb-24">
-      <div data-aos = 'slide-up' data-aos-offset="900" data-aos-duration="800" className="aboutUsDiv relative pt-10 pl-10 ">
+      <div data-aos = 'slide-up' data-aos-offset="450" data-aos-duration="800" className="aboutUsDiv relative pt-10 pl-10 ">
         <img className="h-full left-5 w-full" src="about-1.jpg" alt="" />
         <img
           className="aboutUsPic "
@@ -42,7 +42,7 @@ export const Aboutus = () => {
           alt="oops"
         />
       </div>
-      <div data-aos = 'slide-up' data-aos-offset="1000" data-aos-duration="1500" className="flex flex-col lg:gap-4">
+      <div data-aos = 'slide-up' data-aos-offset="500" data-aos-duration="1500" className="flex flex-col lg:gap-4">
         <h3 className="text-yellow-400 uppercase text-l font-bold">About us</h3>
         <h1 className="font-bold text-4xl">
           We Help Students To Pass Test & Get A License On The First Try

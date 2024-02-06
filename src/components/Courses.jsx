@@ -49,18 +49,18 @@ export const CoursesComponents = () => {
 
                 <img className='' src="courses-1.jpg" alt="oops" />
             </div> */}
-            <div className='relative coursesDiv '>
+            <div  onMouseEnter={() => setIsActive(true)}
+                 onMouseLeave={() => setIsActive(false)} className='relative coursesDiv '>
                 <div 
-                 onMouseEnter={() => setIsActive(true)}
-                 onMouseLeave={() => setIsActive(false)}
+                
                  className='coursesImg  '>
 
 
                 <img className='' src="courses-1.jpg" alt="oops" />
-                </div>
-                <div className={`transition-all duration-500 ease-in-out top-4 opacity-0   ${
-            isActive ? " opacity-100 top-40 z-40 " : "" } text-yellow-400 border border-yellow-400 px-2 py-1 absolute top-[50%] -translate-x-[50%] left-[50%] -translate-y-[50%]`}>
-                    <button className=''>Read More</button>
+                    <button className={`transition-all duration-500 ease-in-out absolute top-4 opacity-0 
+                  ${isActive ? " opacity-100 top-40 z-50 " : "" } 
+            absolute top-[50%] -translate-x-[50%] left-[50%] -translate-y-[50%] border border-yellow-400 text-yellow-400 px-2 py-1 hover:bg-yellow-400 hover:text-white`}>Read More</button>
+                
                 </div>
             </div>
             </div>
@@ -75,14 +75,14 @@ export const Courses = () => {
 
   return (
     <div className=' mx-5 sm:mx-20 mt-24 '>
-        <div data-aos = 'slide-up' data-aos-offset="600" data-aos-duration="300" className="text-center">
+        <div data-aos = 'slide-up' data-aos-duration="300" className="text-center">
 
         <p className='text-yellow-400 font-bold'>TRANDING COURSES</p>
         <h1 className='font-bold text-4xl'>Our Courses Upskill You <br /> With Driving Training</h1>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-3 gap-6 mt-10'>
         {[...Array(3)].map((_, i) => (
-            <div  data-aos = 'slide-up' data-aos-offset={800} data-aos-duration={i*900 }  >
+            <div  data-aos = 'slide-up' data-aos-duration={i*900 }  >
 
         <CoursesComponents key={i} />
             </div>
