@@ -73,6 +73,8 @@ export const CoursesComponents = () => {
 
 export const Courses = () => {
 
+    
+
   return (
     <div className=' mx-5 sm:mx-20 mt-24 '>
         <div data-aos = 'slide-up' data-aos-duration="300" className="text-center">

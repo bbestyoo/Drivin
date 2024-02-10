@@ -99,6 +99,7 @@ export function Nav(){
   return (
     <>
     {/* <Headroom> */}
+    
     <header className={`transition-all ease-in duration-300 bg-white flex flex-col lg:flex lg:flex-row lg:justify-between pl-11 w-full `}>
       <div className='header sm:border-b md:border-b sm:flex md:flex lg:flex justify-between w-full'>
 
@@ -171,11 +172,11 @@ export function Nav(){
         </li>
    
         <li className={`hidden lg:flex text-white lg:py-5  px-11 bg-yellow-400 text-lg font-normal `}>
-          <NavLink className="flex items-center gap-5" to="/get-started">
+          <Link className="flex items-center gap-5" to="/login">
             <p>GetStarted</p>
            
             <FaArrowRight />
-          </NavLink>
+          </Link>
         </li>
         </ul>
 

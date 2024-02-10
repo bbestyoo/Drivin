@@ -37,7 +37,6 @@ const Login = async (req, res) => {
 
     let user = await userSchema.findOne({ email: req.body.email });
     console.log(user);
-    console.log(user.password);
     console.log(req.body.password)
 
     if (user) {
