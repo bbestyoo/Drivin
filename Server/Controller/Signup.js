@@ -12,7 +12,7 @@ const signupSchema = Joi.object({
     .min(8)
     .required(),
   repeat_password: Joi.ref("password"),
-//   image: Joi.string().alphanum(),
+  image: Joi.string().alphanum(),
   email: Joi.string()
     .required()
     .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }),
@@ -54,7 +54,7 @@ const Signup = async(req, res) => {
 
     const user = await userSchema.create({
       ...req.body,
-      // image: req.file.filename,
+      image: req.file.filename,
     //   image: req.file.filename,
       password: hashedPassword,
       repeat_password: hashedPassword,

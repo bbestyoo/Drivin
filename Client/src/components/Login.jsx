@@ -11,10 +11,11 @@ function Login() {
 
   console.log("render...")
   const [password, setPassword] = useState("");
-  const [error, setError] = useState([]);
+  const [error, setError] = useState();
   const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
 
   function handlesubmit(e){
 
@@ -36,15 +37,20 @@ function Login() {
       
     })
     .catch((err)=>{
-            console.log(err);
-            const error = err.response.data;
-            console.log(error);
+            // console.log(err);
+            const errors = err.response.data;
+            console.log("asdasd",errors);
             let temp = {};
-            error?.forEach((err) => {    
-                temp[err.params] = [err.msg];
-            });
+            err.params != null ? (
+            errors?.forEach((err) => {    
+              temp[err.params] = [err.msg]
+              setError(temp);
+
+            })
+            ) : setError(errors) ;
+          
             console.log(temp);
-            setError(temp);
+            console.log("here",error)
         });
         
 
@@ -78,7 +84,7 @@ function Login() {
             <FaUser />
 
           </div>
-            <small className="text-red-800">{error.email}</small>
+            <small className="text-red-800">{error?.email}</small>
           
               </div>
               <div className="mb-4">
@@ -118,9 +124,13 @@ function Login() {
             </label>
             <p>Forget Password?</p>
           </div>
+          <div>
+            <small className="text-red-800">{error?.msg}</small>
+
           <button type="submit" className="w-full bg-yellow-400 rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-yellow-500">
             Login
           </button>
+          </div>
           <div className="flex justify-center">
             <p>Dont have an account?</p>
             <p className="font-bold">

@@ -22,7 +22,8 @@ const userModel = new schema ({
     role :{
         type: String,
         enum: ["clients", "agents"],
-        default: "clients"
+        default: "clients",
+        // required: true
         
     },
     image: {

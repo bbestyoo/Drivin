@@ -1,5 +1,5 @@
-  // import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+  import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
@@ -7,8 +7,7 @@ import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 
 function Signup() {
@@ -24,120 +23,68 @@ function Signup() {
   function clickEyeButton() {
     setIsVisible((prevVisible) => !prevVisible);
   }
-  // const initialState = {
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  //   repeat_password: "",
-  //   role: "",
-  //   website: "",
-  //   image: null,
-  // };
 
-
-  console.log(role);
   function handleRoleChange(e) {
-    if (e.target.value === "company") {
-      setRole("company");
+    if (e.target.value === "agents") {
+      setRole("agents");
     } else {
-      setRole("job-seeker");
+      setRole("clients");
     }
   }
   function handleImage(e) {
     // console.log(fd);
-    console.log(e.target.files[0]);
+    console.log("image",e.target.files[0]);
     setProfileImage(e.target.files[0]);
   }
 
-  // function handleChange(e) {
-  //   setUserData({ ...userData, [e.target.name]: e.target.value });
-  // }
+ 
+  function handleSubmit(e) {
+    e.preventDefault();
 
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     // toast.success("Signup Success");
+    const fd = new FormData();
+      fd.append("username", e.target.username.value);
+      fd.append("email", e.target.email.value);
+      fd.append("password", e.target.password.value);
+      fd.append("repeat_password", e.target.repeat_password.value);
+      fd.append("role", e.target.role.value);
+      fd.append("image", profileImage || "");
+      
+    
+    axios
+      .post("http://localhost:8000/api/Signup", fd)
+      .then((res) => {
+        toast.success("Signup Success");
+        navigate("/login");
+      })
+      .catch((Err) => {
+        setError({});
+        if (Err.response?.data.errors) {
+          const errorArray = Err.response.data.errors;
+          let temp = {};
+          errorArray.forEach((error) => {
+            temp[error.params] = error.msg;
 
-//     const fd = new FormData();
+            if (error.params === "repeat_password") {
+              temp.repeat_password = "Both password should be same";
+            }
+            if (error.params === "image") {
+              temp.image = "*Please add a Image";
+            }
+          });
 
-//     // fd.append("username", userData.username);
-//     // fd.append("email", userData.email);
-//     // fd.append("password", userData.password);
-//     // fd.append("repeat_password", userData.repeat_password);
-//     // fd.append("role", userData.role);
-//     // fd.append("website", userData.website);
-//     // fd.append("image", profileImage);
+          setError({ ...temp });
 
-//     /*
-//     fd.append("username", e.target.username.value);
-//     fd.append("email", e.target.email.value);
-//     fd.append("password", e.target.password.value);
-//     fd.append("repeat_password", e.target.repeat_password.value);
-//     fd.append("role", e.target.role.value);
-//     fd.append("image", profileImage);
-
-//     */
-//     // fd.append("website", e.target.website.value);
-//     if (role === "company") {
-//       fd.append("username", e.target.username.value);
-//       fd.append("email", e.target.email.value);
-//       fd.append("password", e.target.password.value);
-//       fd.append("repeat_password", e.target.repeat_password.value);
-//       fd.append("role", e.target.role.value);
-//       // fd.append("website", e.target.website.value);
-//       fd.append("image", profileImage || "");
-//     } else {
-//       fd.append("username", e.target.username.value);
-//       fd.append("email", e.target.email.value);
-//       fd.append("password", e.target.password.value);
-//       fd.append("repeat_password", e.target.repeat_password.value);
-//       fd.append("role", e.target.role.value);
-//       fd.append("image", profileImage || "");
-//     }
-
-//     // console.log(fd.get("username"));
-//     console.log(...fd);
-//     axios
-//       .post("http://localhost:8000/api/signup", fd)
-//       .then((res) => {
-//         toast.success("Signup Success");
-//         // console.log(res.data);
-//         // console.log("hello bro");
-
-//         navigate("/login");
-//       })
-//       .catch((Err) => {
-//         // console.log(Err);
-//         setError({});
-//         // console.log("hello error");
-//         //Err.response.data.errors[0].msg)
-//         if (Err.response?.data.errors) {
-//           const errorArray = Err.response.data.errors;
-//           let temp = {};
-//           errorArray.forEach((error) => {
-//             temp[error.params] = error.msg;
-
-//             if (error.params === "repeat_password") {
-//               temp.repeat_password = "Both password should be same";
-//             }
-//             if (error.params === "image") {
-//               temp.image = "*Please add a Image";
-//             }
-//           });
-//           // setError(temp);
-
-//           setError({ ...temp });
-
-//         }
+        }
 
     
-//         if (Err.response.data.msg) {
-//           setError({ email: Err.response.data.msg });
-//         }
-//       });
-//     setError({});
+        if (Err.response.data.msg) {
+          setError({ email: Err.response.data.msg });
+        }
+      });
+    setError({});
 
-//     console.log(error);
-//   }
+    console.log("error",error);
+    }
 
   return (
     <>
@@ -227,10 +174,10 @@ function Signup() {
               id="role"
               onChange={(e) => handleRoleChange(e)}
             >
-              <option value="job-seeker">
-                job-seeker
+              <option value="agents">
+                agents
               </option>
-              <option value="company">company</option>
+              <option value="clients">clients</option>
             </select>
           </div>
           <div className="flex flex-col items-start">

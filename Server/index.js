@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require("cors")
+const upload = require("./multer/multer")
 
 const {createCourses,getCourses} = require("./Controller/Courses")
 const app = express()
@@ -8,6 +9,7 @@ const Signup = require("./Controller/Signup")
 const Login = require("./Controller/Login")
 const { createAppointment, appointment } = require("./Controller/Appointments")
 const auth = require("./middleware/auth")
+const getUser = require("./Controller/User")
 app.use(express.json())
 app.use(cors())
 
@@ -20,10 +22,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/drivin")
 
 app.get("/api/getCourses",getCourses)
 app.post("/api/createCourses",createCourses)
-app.post("/api/Signup",Signup)
+app.post("/api/Signup",upload.single('image'),Signup)
 app.post("/api/Login",Login)
 app.post("/api/createAppoints",auth,createAppointment)
 app.get("/api/Appoints",appointment)
+app.get("/api/users",getUser)
 
 app.listen(8000, ()=> {
     console.log("at your service sir....")

@@ -1,22 +1,14 @@
-import { useState } from "react";
-import pp2 from "/pp2.jpg";
-import pp1 from "/pp1.jpg";
-import pp3 from "/pp3.jpg";
-import pp4 from "/pp4.jpg";
-import "../App.css";
+import { useEffect, useState } from "react";
+
 
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { Banner } from "./Header";
 import Footer from "./Footer";
+import axios from "axios";
 
-let image = [
-  {imageName:pp1}, 
-  {imageName:pp2}, 
-  {imageName:pp3}, 
-  {imageName:pp4}
-]
+
 
 export function OurTeam() {
   return (
@@ -31,6 +23,25 @@ export function OurTeam() {
 }
 
 function Agents() {
+  const [users, setUsers] = useState([])
+
+  useEffect(()=> {
+    axios.get("http://localhost:8000/api/users")
+    .then((res)=>{
+      console.log(res)
+      setUsers(res.data)
+
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+
+
+  },[])
+
+
+
+
   return (
     <div>
       <section className="text-center">
@@ -41,17 +52,14 @@ function Agents() {
       </section>
       <section className="   px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {
-          image.map((imgs, i)=> (
+          users?.map((user, i)=> (
             <div data-aos = 'slide-up' data-aos-offset={800} data-aos-duration={i*900 }>
 
-            <Card  img={imgs.imageName} key={i} />
+            <Card  user={user} key={i} />
             </div>
           ))
           }
-        {/* <Card img={pp1} />
-        <Card img={pp2} />
-        <Card img={pp3} />
-        <Card img={pp4} /> */}
+       
       </section>
     </div>
   );
@@ -59,7 +67,7 @@ function Agents() {
 
 export default Agents;
 
-export const Card = (props) => {
+export const Card = ({user}) => {
   const [isActive, setIsActive] = useState(false);
 
   console.log(isActive);
@@ -75,7 +83,7 @@ export const Card = (props) => {
           <img
             id=""
             alt="pp"
-            src={props.img}
+            src={user.image}
             className="h-[35vh] sm:h-[60vh] md:h-[42vh] w-[70vw]  object-top object-cover"
           />
         </div>
@@ -95,7 +103,7 @@ export const Card = (props) => {
           </span>
         </div>
         <div className=" py-5 bg-[#F3F6F8] flex items-center flex-col gap-2">
-          <h1 className=" text-xl font-semibold">Full Name</h1>
+          <h1 className=" text-xl font-semibold">{user.username}</h1>
           <span className=" text-base ">Trainer</span>
         </div>
       </div>

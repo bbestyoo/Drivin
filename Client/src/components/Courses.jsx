@@ -1,10 +1,11 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiBarChartAlt } from "react-icons/bi";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Banner } from './Header';
 import Agents from './Agents';
 import Footer from './Footer';
+import axios from 'axios';
 
 
 export const CoursesPage = () =>{
@@ -22,25 +23,24 @@ export const CoursesPage = () =>{
 }
 
 
-export const CoursesComponents = () => {
+export const CoursesComponents = ({course}) => {
     const [isActive, setIsActive] = useState(false);
-
 
 
     return (
         <div>
             <div className='bg-white'>
             <div className='flex flex-col items-center text-center gap-4 px-5'>
-                <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>$99</button>
-                <h1 className='font-semibold text-xl text-center'>Automatic Car Lessons</h1>
-                <p className='text-gray-500'>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
+                <button className='bg-yellow-400 text-white px-6 py-1 font-semibold'>{course.price}</button>
+                <h1 className='font-semibold text-xl text-center'>{course?.title}</h1>
+                <p className='text-gray-500'>{course?.description}</p>
                 <p className='flex justify-center mb-5 gap-2'>
                     <span className='flex items-center gap-2'>
 
-                <BiBarChartAlt /> Beginner / 
+                <BiBarChartAlt /> {course.level} / 
                     </span>
                     <span className='flex items-center gap-2'>
-                    <FaCalendarAlt /> 3 Week
+                    <FaCalendarAlt /> {course.duration}
 
                     </span>
                 </p>
@@ -73,6 +73,19 @@ export const CoursesComponents = () => {
 
 export const Courses = () => {
 
+    const [courses, setCourses] = useState([])
+    useEffect(()=> {
+
+        axios.get("http://localhost:8000/api/getCourses")
+        .then((res)=>{
+            console.log(res.data)
+            setCourses(res.data)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        
+    }, [])
     
 
   return (
@@ -83,10 +96,10 @@ export const Courses = () => {
         <h1 className='font-bold text-4xl'>Our Courses Upskill You <br /> With Driving Training</h1>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-3 gap-6 mt-10'>
-        {[...Array(3)].map((_, i) => (
+        {courses?.map((course, i) => (
             <div  data-aos = 'slide-up' data-aos-duration={i*900 }  >
 
-        <CoursesComponents key={i} />
+        <CoursesComponents course={course} key={i} />
             </div>
       ))}
 
