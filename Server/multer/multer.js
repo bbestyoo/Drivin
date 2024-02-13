@@ -2,7 +2,7 @@ const multer = require("multer")
 
 const storage = multer.diskStorage({
 
-  
+        
 
     destination: function (req, file, cb) { 
       console.log("j bayeni ")

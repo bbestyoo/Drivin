@@ -16,7 +16,7 @@ const auth = async (req, res, next) => {
         console.log({ decoded });
         loggedIn = true;
       }
-    } catch (err) {}
+    } catch (err) {console.log(err)}
     // console.log("hello");
     if (loggedIn) {
       next();

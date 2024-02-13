@@ -6,6 +6,7 @@ import { Banner } from './Header';
 import Agents from './Agents';
 import Footer from './Footer';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 export const CoursesPage = () =>{
@@ -112,21 +113,23 @@ export const Courses = () => {
 }
 
 export const Appointments = () => {
+    const navigate = useNavigate()
+
     return (
-        <div data-aos = 'slide-up' data-aos-offset="1000" data-aos-duration="900" className='mx-auto mt-32 bg-yellow-400 p-10 w-[80%] sm:w-[60%]'>
+        <div data-aos = 'slide-up' data-aos-offset="300" data-aos-duration="900" className='mx-auto mt-32 bg-yellow-400 p-10 w-[80%] sm:w-[60%]'>
             <form action="">
 
             <h1 className='font-bold text-4xl text-center'>Make Appointment</h1>
             <div className='flex flex-col sm:flex sm:flex-row gap-5 mt-7'>
-                <input className='px-5 py-4 w-full' placeholder='Your name' type="text" />
+                <input onClick={()=> {navigate("/appointment")}} className='px-5 py-4 w-full' placeholder='Your name' type="text" />
                 <input className='px-5 py-4 w-full' placeholder='Your email' type="text" />
             </div>
             <div className='flex flex-col sm:flex sm:flex-row  gap-5 mt-7'>
-                <input className='px-5 py-4 w-full' placeholder='Courses type' type="text" />
+                <input onClick={()=> {navigate("/appointment")}} className='px-5 py-4 w-full' placeholder='Courses type' type="text" />
                 <input className='px-5 py-4 w-full' placeholder='Car type' type="text" />
             </div>
             <input className='mt-7 w-full h-24 px-5' placeholder='messages' type="text" />
-            <button className=' mt-7 w-full bg-indigo-950 text-white font-semibold p-2'>Submit</button>
+            <button onClick={()=> {navigate("/appointment")}} className=' mt-7 w-full bg-indigo-950 text-white font-semibold p-2'>Submit</button>
 
             </form>
             

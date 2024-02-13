@@ -53,7 +53,7 @@ function Agents() {
       <section className="   px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {
           users?.map((user, i)=> (
-            <div data-aos = 'slide-up' data-aos-offset={800} data-aos-duration={i*900 }>
+            <div data-aos = 'slide-up' data-aos-offset={300} data-aos-duration={i*900 }>
 
             <Card  user={user} key={i} />
             </div>
@@ -83,7 +83,7 @@ export const Card = ({user}) => {
           <img
             id=""
             alt="pp"
-            src={user.image}
+            src={`http://localhost:8000/${user.image}`}
             className="h-[35vh] sm:h-[60vh] md:h-[42vh] w-[70vw]  object-top object-cover"
           />
         </div>

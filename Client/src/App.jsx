@@ -10,9 +10,43 @@ import { Appointment } from "./components/Appointment";
 import { OurTeam } from "./components/Agents";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import axios from "axios";
+import { setUserDetails } from "./Redux/UserSlice";
 
 
 function App() {
+
+  const token = localStorage.getItem("token");
+  console.log(token);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (token) {
+          console.log("yoyo");
+          const response = await axios.get("http://localhost:8000/api/user", {
+            headers: {
+              authorization: `bearer ${token}`,
+            },
+          });
+          console.log(response.data);
+          dispatch(setUserDetails(response.data));
+          // localStorage.clear()
+        
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [token, dispatch]);
+
+
+
+
   return (
     <>
       <Routes>

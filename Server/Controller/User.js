@@ -1,5 +1,5 @@
 const userSchema = require("../models/Users")
-const getUser = async (req, res) => {
+const getUsers = async (req, res) => {
   try {
     console.log("gret user")
     const myuser = await userSchema.find({role: "agents"})
@@ -11,8 +11,33 @@ const getUser = async (req, res) => {
     // console.log({ userYetaXa: myuser });
     // res.status(200).send(myuser);
   } catch (err) {
+    res.send(err)
+    console.log(err)
     // next(err);x
   }
 };
 
-module.exports = getUser;
+const getUser = async (req, res) => {
+  try {
+    console.log("gret user")
+    console.log("gret user..",req.user)
+
+    const myuser = await userSchema.findById(req.user.user._id, {
+      password: 0,
+      repeat_password: 0,
+    });
+    console.log({ userYetaXa: myuser });
+    res.status(200).send(myuser);
+  } catch (err) {
+    res.send(err)
+    console.log(err)
+
+    // next(err);
+  }
+};
+
+
+module.exports = {
+  getUsers,
+  getUser
+};

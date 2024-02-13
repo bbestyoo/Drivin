@@ -89,24 +89,9 @@ export function Home() {
           infinite: true,
         },
       },
-      // {
-      //   breakpoint: 600,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 2,
-      //     initialSlide: 2,
-      //   },
-      // },
-      // {
-      //   breakpoint: 300,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1,
-      //   },
-      // },
+      
     ],
   };
-
   const handlePrevSlide = () => {
     sliderRef.current.slickPrev();
   };
@@ -144,7 +129,7 @@ export function Home() {
   
       </div>
         <div  className="flex mx-5 sm:mx-20 flex-col my-20 lg:flex-row lg:absolute lg:-bottom-20 lg:translate-y-[50%] lg:z-10">
-          <div data-aos = 'fade-in' data-aos-offset="900" data-aos-duration="800" className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white  ">
+          <div data-aos = 'fade-in' data-aos-duration="800" className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white  ">
             <span className='bg-yellow-400 p-2  text-white'><FaCar size={25}/></span>
             <div>
               <span className='text-xl font-semibold'>Easy Driving Learn</span>
@@ -154,7 +139,7 @@ export function Home() {
               </p>
             </div>
           </div>
-          <div data-aos = 'fade-in' data-aos-offset="1000" data-aos-duration="1000" className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white ">
+          <div data-aos = 'fade-in'  data-aos-duration="1000" className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white ">
             <span className='bg-yellow-400 p-2 text-white'><IoIosPeople size={25}/></span>
             <div>
               <span className='text-xl font-semibold'>National Instructor</span>
@@ -164,7 +149,7 @@ export function Home() {
               </p>
             </div>
           </div>
-          <div data-aos = 'fade-in' data-aos-offset="1100" data-aos-duration="1100" className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white  ">
+          <div data-aos = 'fade-in'data-aos-duration="1100" className="flex gap-6 items-start p-5 py-10 shadow-xl bg-white  ">
             <span className='bg-yellow-400 p-1 text-white'><PiNoteDuotone size={25}/></span>
             <div>
               <span className='text-xl font-semibold'>Get licence</span>
@@ -188,7 +173,7 @@ export function Home() {
         }}
         bgImageAlt="the cat"
         bgImageSize="cover"
-        strength={900}
+        strength={1000}
       >
         <Courses />
         <Appointments />
