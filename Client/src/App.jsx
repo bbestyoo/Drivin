@@ -6,7 +6,7 @@ import { Home } from "./components/Home";
 import { CoursesPage } from "./components/Courses";
 import { Contacts } from "./components/Contacts";
 import { FeaturesPage } from "./components/Features";
-import { Appointment } from "./components/Appointment";
+import { Appointment, Appoints } from "./components/Appointment";
 import { OurTeam } from "./components/Agents";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -66,6 +66,7 @@ function App() {
         <Route path="/ourteam" element={<OurTeam/>} ></Route>
         <Route path="/login" element={<Login/>} ></Route>
         <Route path="/signup" element={<Signup/>} ></Route>
+        <Route path="/myApps" element={<Appoints/>} ></Route>
       </Route>
       </Routes>
     </>

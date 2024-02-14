@@ -59,6 +59,7 @@ export function HeaderTop() {
   );
 }
 export function Nav() {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const userDetails = useSelector((state) => state.user.value);
   console.log("userbi", userDetails);
@@ -94,17 +95,17 @@ export function Nav() {
   function handleLogout() {
     console.log("clicked...")
     dispatch(logoutUser())
-    navigate("/");
+    navigate("/")
   }
 
   
-  // ${showNav && 'sticky z-50 top-0 '}
   return (
     <>
       {/* <Headroom> */}
 
       <header
-        className={`transition-all ease-in duration-300 bg-white flex flex-col lg:flex lg:flex-row lg:justify-between pl-11 w-full `}
+        className={`  ${showNav && 'sticky z-50 top-0 '}
+         transition-all ease-in duration-300 bg-white flex flex-col lg:flex lg:flex-row lg:justify-between pl-11 w-full `}
       >
         <div className="header sm:border-b md:border-b sm:flex md:flex lg:flex justify-between w-full">
           <ul className="border-r pr-14 lg:py-2 sm:py-4 md:py-4  ">
